@@ -1,15 +1,24 @@
-
+// Detecting button press
 numberOfButtons = document.querySelectorAll(".drum").length;
 
 for (var i = 0; i < numberOfButtons; i++){
 
     document.querySelectorAll(".drum")[i].addEventListener("click", play);
-
 }
 
- function play(){
-   var buttonInnerHTML = this.innerHTML;
-  switch (buttonInnerHTML) {
+function play(){
+  var buttonInnerHTML = this.innerHTML;
+  makeSound(buttonInnerHTML);
+}
+
+
+// Detecting keyboard press
+document.addEventListener("keypress", function(event){
+  makeSound(event.key);
+});
+
+function makeSound(key) {
+  switch (key) {
     case "w":
       var crash = new Audio("sounds/crash.mp3");
       crash.play();
@@ -47,5 +56,4 @@ for (var i = 0; i < numberOfButtons; i++){
     default: console.log(buttonInnerHTML);
 
   }
- }
-
+}
