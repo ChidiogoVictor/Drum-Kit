@@ -1,6 +1,6 @@
 **Drum Kit**
 
-This programme is used to play musical instruents
+This program is used to play musical instruments
 
 **Technologies**
 HTML
